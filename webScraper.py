@@ -28,7 +28,7 @@ for i in range (10):
     image_res = requests.get(image_url)
     image_res.raise_for_status()
     #download image
-    img = open(os.path.basename(str(i) + '_' + image_url[0:5]), 'wb')
+    img = open(os.path.basename(str(i)), 'wb')
     for chunk in image_res.iter_content(100000):
         img.write(chunk)
     img.close()
